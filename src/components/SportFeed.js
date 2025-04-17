@@ -185,13 +185,11 @@ const SportFeed = ({ sport }) => {
         </div>
 
         {/* Bluesky Posts Feed */}
-        <div className="bluesky-feed">
-          <FeedList
-            data={bskyPosts}
-            renderItem={renderBskyPost}
-            loadMoreLabel="More Bluesky Posts"
-          />
-        </div>
+        <FeedList
+          data={bskyPosts}
+          renderItem={renderBskyPost}
+          loadMoreLabel="More Bluesky Posts"
+        />
       </div>
     </div>
   );
