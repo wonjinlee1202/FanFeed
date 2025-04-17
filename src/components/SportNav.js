@@ -48,8 +48,8 @@ const SportNav = ({ sports, selectedSport, onSelectSport }) => {
         <a
           href={
             ["NBA", "NFL", "NCAAF"].includes(selectedSport.toUpperCase())
-              ? `http://https://fan-feed-scores.vercel.app/:4000/${selectedSport.toLowerCase()}`
-              : "http://https://fan-feed-scores.vercel.app/:4000/"
+              ? `https://fan-feed-scores.vercel.app/${selectedSport.toLowerCase()}`
+              : "https://fan-feed-scores.vercel.app/"
           }
           rel="noopener noreferrer"
           className="live-scores-button"

@@ -13,7 +13,7 @@ const PreferencesPage = ({ onSignOut }) => {
 
   useEffect(() => {
     if (token) {
-      fetch("http://fanfeed-server-env.eba-wnhhgsmd.us-west-2.elasticbeanstalk.com/api/user/preferences", {
+      fetch("https://fanfeed-server-env.eba-wnhhgsmd.us-west-2.elasticbeanstalk.com/api/user/preferences", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())
@@ -28,7 +28,7 @@ const PreferencesPage = ({ onSignOut }) => {
     const updated = [...detailedPrefs, sport];
     setDetailedPrefs(updated);
 
-    fetch("http://fanfeed-server-env.eba-wnhhgsmd.us-west-2.elasticbeanstalk.com/api/user/preferences", {
+    fetch("https://fanfeed-server-env.eba-wnhhgsmd.us-west-2.elasticbeanstalk.com/api/user/preferences", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const PreferencesPage = ({ onSignOut }) => {
     const updatedPrefs = detailedPrefs.filter((p) => p !== sport);
     setDetailedPrefs(updatedPrefs);
 
-    fetch("http://fanfeed-server-env.eba-wnhhgsmd.us-west-2.elasticbeanstalk.com/api/user/preferences", {
+    fetch("https://fanfeed-server-env.eba-wnhhgsmd.us-west-2.elasticbeanstalk.com/api/user/preferences", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
