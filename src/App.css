@@ -1,0 +1,312 @@
+main {
+  max-height: calc(100vh - 100px); /* You can adjust this to whatever fits your design */
+  overflow-y: auto;
+}
+
+/* Sport Nav */
+.sport-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  height: 39px;
+  position: relative; /* This is important to make the absolute positioning work */
+}
+
+.search-container {
+  position: absolute;
+  left: 20px; /* Position the search bar on the far left */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10; /* Ensure the search bar is above the sport buttons */
+}
+
+.search-input {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-button {
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.sport-buttons-container {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Ensures the sport buttons occupy the remaining space */
+}
+
+.sport-button {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.sport-button.active {
+  border-bottom: 2px solid #007bff;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Other CSS (unchanged) */
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #008AD8;
+  color: white;
+  height: 20px;
+}
+
+.centered-title {
+  margin: 0; /* avoid default h1 margin */
+}
+
+.title {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.user-area {
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.user-name {
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  margin-top: 0.5rem;
+  z-index: 100;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu button {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+.sign-out-button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.feed-section {
+  background-color: #fafafa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: inherit;
+  text-decoration: none;
+  margin: 0;
+}
+
+.red-dot {
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Sport Nav */
+.sport-nav {
+  display: flex;
+  justify-content: center;
+  background-color: #f0f0f0;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  flex-wrap: wrap; /* Allows for wrapping on smaller screens */
+}
+
+.search-container {
+  position: absolute;
+  left: 20px; /* Fixed positioning for search bar */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+  width: auto; /* Allow flexible width */
+}
+
+.search-input {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 180px; /* Restrict max width for search input */
+  min-width: 120px;
+  transition: width 0.3s ease; /* Smooth width transition for responsiveness */
+}
+
+.search-button {
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.sport-buttons-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap; /* Allow wrapping of buttons on smaller screens */
+}
+
+.sport-button {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.sport-button.active {
+  border-bottom: 2px solid #007bff;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.live-scores-container {
+  position: absolute;
+  right: 75px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  width: auto;
+}
+
+.live-scores-button {
+  white-space: nowrap;
+  color: red;
+  text-decoration: none;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: bold;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease;
+}
+
+.live-scores-button:hover {
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .sport-nav {
+    height: 119px;
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+
+  .search-container {
+    position: static; /* Make search bar part of the normal flow on small screens */
+    width: auto; /* Make the search bar take full width */
+    margin-bottom: 10px; /* Add space between search and sport buttons */
+    justify-content: center; /* Center align search bar */
+  }
+
+  /* Ensure form takes full width */
+  form {
+    width: auto; /* Allow the form to take up full width */
+  }
+
+  .search-input {
+    width: auto; /* Make the search input take full width */
+    max-width: none; /* Allow input to grow */
+    font-size: 0.9rem; /* Slightly smaller font size on mobile */
+  }
+
+  .search-button {
+    width: auto; /* Keep the button's width flexible */
+  }
+
+  .sport-button {
+    margin: 5px 2px; /* Adjust spacing for smaller screens */
+    padding: 8px 12px;
+    font-size: 0.9rem; /* Slightly smaller font size */
+  }
+
+  .live-scores-container {
+    position: static; /* Make it part of the normal flow */
+    width: auto;
+    margin-bottom: 10px;
+    justify-content: center; /* Center on smaller screens */
+  }
+
+  a.live-scores-button {
+    position: relative;
+    transform: 0;
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}
+
+/* For extra small screens like mobile phones in portrait */
+@media (max-width: 480px) {
+  .sport-button {
+    padding: 6px 10px; /* Reduce padding further */
+    font-size: 0.8rem; /* Further reduce font size */
+  }
+
+  .live-scores-button {
+    font-size: 0.85rem;
+    padding: 5px 8px;
+  }
+}

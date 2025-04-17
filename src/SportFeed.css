@@ -1,0 +1,196 @@
+.sport-feed-container {
+    display: flex;
+    padding: 15px;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .articles-feed,
+  .bluesky-feed {
+    flex: 1 1 48%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box; /* ✅ Ensures padding doesn’t blow up the width */
+  }
+  
+  .sport-title {
+    font-size: 1.8em;
+    margin-bottom: 16px;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+  
+  .articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    background-color: #f9f9f9;
+    word-wrap: break-word;
+    height: auto; /* Allow the card to grow based on content */
+  }
+  
+  .article-header {
+    display: flex;
+    overflow: hidden;
+    gap: 4px;
+    margin-bottom: 8px;
+    flex-wrap: wrap; /* Ensure title wraps when necessary */
+  }
+  
+  .article-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #0077cc;
+    text-decoration: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: block; /* Ensure the title is treated as a block element */
+  }
+  
+  .article-source {
+    font-size: 0.9em;
+    color: #555;
+  }
+  
+  .article-desc {
+    font-size: 1em;
+    color: #333;
+    word-break: break-word;
+    margin-top: 8px; /* Adds spacing between title and description */
+  }
+  
+  a.article-title {
+    position: relative;
+    margin-bottom: 5px;
+  }
+
+  img {
+    margin-bottom: 5px;
+    object-fit: cover;
+  }
+  
+  .load-more-button {
+    margin: 20px auto;
+    display: block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .load-more-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .sort-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .sort-dropdown select {
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  .bsky-title {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .bsky-post {
+    margin-bottom: 1.5rem;
+  }
+  
+  .bsky-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bsky-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .bsky-handle {
+    color: #555;
+    font-size: 0.85rem;
+    margin: 0;
+  }
+  
+  .bsky-date {
+    font-size: 0.75rem;
+    color: #999;
+  }
+  
+  .bsky-text {
+    margin: 0.5rem 0;
+  }
+  
+  .bsky-embed {
+    display: flex;
+    gap: 0.75rem;
+    background: #f3f3f3;
+    padding: 0.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  
+  .bsky-embed img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+  
+  .bsky-link-details h5 {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  
+  .bsky-link-details p {
+    font-size: 0.8rem;
+    color: #555;
+  }
+
+  a.bluesky-link {
+    position: relative;
+  }
+
+  .bsky-image-container {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+  }
+
+  .bsky-fullsize-image {
+    max-width: 100%;  /* Make sure the image doesn't exceed the container's width */
+    max-height: 100vh; /* Ensure the image's height does not exceed the viewport height */
+    object-fit: contain; /* Maintain aspect ratio and ensure the image scales nicely */
+    border-radius: 8px;  /* Optional: rounds the image corners */
+  }
