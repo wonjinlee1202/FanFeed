@@ -15,7 +15,7 @@ const HomePage = () => {
 
   useEffect(() => { // run once to fetch user preferences (every time token changes)
     if (token) {
-      fetch("https://fanfeed-server-env.eba-wnhhgsmd.us-west-2.elasticbeanstalk.com/api/user/preferences", {
+      fetch("/api/user/preferences", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then(res => res.json())

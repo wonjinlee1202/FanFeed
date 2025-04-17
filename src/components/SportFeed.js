@@ -13,7 +13,7 @@ const SportFeed = ({ sport }) => {
 
   useEffect(() => {
     if (token) {
-      fetch("https://fanfeed-server-env.eba-wnhhgsmd.us-west-2.elasticbeanstalk.com/api/user/preferences", {
+      fetch("/api/user/preferences", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())
@@ -25,7 +25,7 @@ const SportFeed = ({ sport }) => {
 
   useEffect(() => {
     if (sport) {
-      fetch(`https://fanfeed-server-env.eba-wnhhgsmd.us-west-2.elasticbeanstalk.com/api/news/${sport}?sortBy=${sortBy}`)
+      fetch(`/api/news/${sport}?sortBy=${sortBy}`)
         .then((res) => res.json())
         .then((data) => {
           setArticles(data.articles || []);
@@ -36,7 +36,7 @@ const SportFeed = ({ sport }) => {
 
   useEffect(() => {
     if (sport) {
-      fetch(`https://fanfeed-server-env.eba-wnhhgsmd.us-west-2.elasticbeanstalk.com/api/bluesky/${sport}?sort=${sortByBS}`)
+      fetch(`/api/bluesky/${sport}?sort=${sortByBS}`)
         .then((res) => res.json())
         .then((data) => {
           setBskyPosts(data.posts || []);

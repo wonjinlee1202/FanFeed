@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/(.*)",
+        "destination": "http://fanfeed-server-env.eba-wnhhgsmd.us-west-2.elasticbeanstalk.com/api/$1"
+      }
+    ]
+  }
+  
