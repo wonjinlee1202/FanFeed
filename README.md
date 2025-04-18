@@ -1,8 +1,11 @@
 # FanFeed
 
+Welcome to **FanFeed** — the ultimate web application designed to deliver real-time updates, news, and content tailored for fans of sports, entertainment, and more. Whether you're keeping up with your favorite teams, celebrities, or events, FanFeed keeps you connected and in the know with personalized feeds.
+
 **Live Link to Project:** [https://fan-feed.vercel.app/](https://fan-feed.vercel.app/)
 
-Welcome to **FanFeed** — the ultimate web application designed to deliver real-time updates, news, and content tailored for fans of sports, entertainment, and more. Whether you're keeping up with your favorite teams, celebrities, or events, FanFeed keeps you connected and in the know with personalized feeds.
+**Backend GitHub:** [https://github.com/wonjinlee1202/FanFeedServer](https://github.com/wonjinlee1202/FanFeedServer)
+**Live Scores GitHub:** [https://github.com/wonjinlee1202/FanFeedScores](https://github.com/wonjinlee1202/FanFeedScores)
 
 ## Technologies
 - **Frontend**: React
