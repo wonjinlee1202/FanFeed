@@ -4,8 +4,7 @@ Welcome to **FanFeed** — the ultimate web application designed to deliver real
 
 **Live Link to Project:** [https://fan-feed.vercel.app/](https://fan-feed.vercel.app/)
 
-**Backend GitHub:** [https://github.com/wonjinlee1202/FanFeedServer](https://github.com/wonjinlee1202/FanFeedServer)
-
+**Backend GitHub:** [https://github.com/wonjinlee1202/FanFeedServer](https://github.com/wonjinlee1202/FanFeedServer) <br />
 **Live Scores GitHub:** [https://github.com/wonjinlee1202/FanFeedScores](https://github.com/wonjinlee1202/FanFeedScores)
 
 ## Technologies
