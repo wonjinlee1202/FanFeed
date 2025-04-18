@@ -5,18 +5,20 @@ import SportFeed from "../components/SportFeed";
 import "../App.css";
 
 const HomePage = () => {
+  const [selectedSport, setSelectedSport] = useState("NBA");
+
   return (
     <div className="home-page">
       <HeaderBar guest={true}/>
       <SportNav
         sports={[]}
         selectedSport={"NBA"}
-        onSelectSport={() => {}}
+        onSelectSport={setSelectedSport}
       />
 
       <main>
         <section className="feed-section">
-          <SportFeed sport={"NBA"} />
+          <SportFeed sport={selectedSport} />
         </section>
       </main>
     </div>
