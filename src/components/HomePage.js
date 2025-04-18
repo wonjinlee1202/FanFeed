@@ -10,7 +10,7 @@ import "../App.css";
 const HomePage = () => {
   const { user, token, loading, handleSignIn, handleSignOut } = useUser();
   const [detailedPrefs, setDetailedPrefs] = useState([]);
-  const [selectedSport, setSelectedSport] = useState("Sports");
+  const [selectedSport, setSelectedSport] = useState("NBA");
   const [sportsList, setSportsList] = useState([]);
 
   useEffect(() => { // run once to fetch user preferences (every time token changes)
