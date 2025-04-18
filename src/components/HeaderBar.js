@@ -1,17 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from "react-router-dom";
 import { useUser } from "../UserContext";
 import "../App.css";
 
-const HeaderBar = () => {
+const HeaderBar = ({ guest }) => {
   const { user, token, loading, handleSignIn, handleSignOut } = useUser();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
   const toggleDropdown = () => {
-    setDropdownOpen(prev => !prev);
+    setDropdownOpen((prev) => !prev);
   };
 
   const signOut = () => {
@@ -40,18 +39,32 @@ const HeaderBar = () => {
   return (
     <header className="header">
       <div />
-      <Link to="/">
-        <h1 className="title centered-title">FanFeed</h1>
-      </Link>
+        {guest ? (
+          <Link to="/guest">
+            <h1 className="title centered-title">FanFeed</h1>
+          </Link>
+        ) : (
+          <Link to="/">
+            <h1 className="title centered-title">FanFeed</h1>
+          </Link>
+        )}
       <div className="user-area" ref={dropdownRef}>
-        <span className="user-name" onClick={toggleDropdown}>
-          {user.displayName} ▼
-        </span>
-        {dropdownOpen && (
-          <div className="dropdown-menu">
-            <button onClick={handleEditPreferences}>Edit Preferences</button>
-            <button onClick={signOut}>Sign Out</button>
-          </div>
+        {guest ? (
+          <Link to="/" className="sign-in-button">
+            <p>Sign In</p>
+          </Link>
+        ) : (
+          <>
+            <span className="user-name" onClick={toggleDropdown}>
+              {user.displayName} ▼
+            </span>
+            {dropdownOpen && (
+              <div className="dropdown-menu">
+                <button onClick={handleEditPreferences}>Edit Preferences</button>
+                <button onClick={signOut}>Sign Out</button>
+              </div>
+            )}
+          </>
         )}
       </div>
     </header>

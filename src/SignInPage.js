@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const SignInPage = ({ onSignIn }) => {
   return (
@@ -14,6 +15,9 @@ const SignInPage = ({ onSignIn }) => {
           />
           Sign in with Google
         </button>
+        <Link to="/guest" style={styles.googleButton}>
+          Continue as Guest
+        </Link>
       </div>
     </div>
   );
@@ -30,7 +34,7 @@ const styles = {
   },
   card: {
     backgroundColor: "#fff",
-    padding: "3rem",
+    padding: "4rem",
     borderRadius: "12px",
     boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
     textAlign: "center",
@@ -61,6 +65,7 @@ const styles = {
     boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
     transition: "background-color 0.2s ease",
     margin: "0 auto",
+    marginBottom: "0.5rem",
   },
   googleIcon: {
     width: "20px",

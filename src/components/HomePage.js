@@ -42,7 +42,7 @@ const HomePage = () => {
   
   return (
     <div className="home-page">
-      <HeaderBar/>
+      <HeaderBar guest={false}/>
       <SportNav
         sports={sportsList}
         selectedSport={selectedSport}

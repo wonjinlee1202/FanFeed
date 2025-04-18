@@ -69,7 +69,7 @@ const PreferencesPage = ({ onSignOut }) => {
   return (
     <div>
       <main>
-        <HeaderBar user={user} onSignOut={handleSignOut} />
+        <HeaderBar guest={false} />
         <div className="pref-body">
           <h2>Your Interests</h2>
 
