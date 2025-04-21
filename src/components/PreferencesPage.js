@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useUser } from "../UserContext";
+import { auth } from "./firebase";
+import { getUserStrings, saveUserStrings } from "../db";
 import HeaderBar from "../components/HeaderBar";
 import LoadingPage from "../LoadingPage";
 import { Link } from 'react-router-dom';
@@ -13,13 +15,15 @@ const PreferencesPage = ({ onSignOut }) => {
 
   useEffect(() => {
     if (token) {
-      fetch("/api/user/preferences", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setDetailedPrefs(data?.preferences || []);
-        });
+      const user = auth.currentUser;
+      getUserStrings(user.uid).then(setDetailedPrefs);
+      // fetch("/api/user/preferences", {
+      //   headers: { Authorization: `Bearer ${token}` },
+      // })
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     setDetailedPrefs(data?.preferences || []);
+      //   });
     }
   }, [token]);
 
@@ -28,32 +32,36 @@ const PreferencesPage = ({ onSignOut }) => {
     const updated = [...detailedPrefs, sport];
     setDetailedPrefs(updated);
 
-    fetch("/api/user/preferences", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ preferences: updated }),
-    }).catch((error) => {
-      console.error("Error adding sport:", error);
-    });
+    const user = auth.currentUser;
+    saveUserStrings(user.uid, updated);
+    // fetch("/api/user/preferences", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Authorization: `Bearer ${token}`,
+    //   },
+    //   body: JSON.stringify({ preferences: updated }),
+    // }).catch((error) => {
+    //   console.error("Error adding sport:", error);
+    // });
   };
 
   const removeInterest = (sport) => {
     const updatedPrefs = detailedPrefs.filter((p) => p !== sport);
     setDetailedPrefs(updatedPrefs);
 
-    fetch("/api/user/preferences", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ preferences: updatedPrefs }),
-    }).catch((error) => {
-      console.error("Error removing sport:", error);
-    });
+    const user = auth.currentUser;
+    saveUserStrings(user.uid, updatedPrefs);
+    // fetch("/api/user/preferences", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Authorization: `Bearer ${token}`,
+    //   },
+    //   body: JSON.stringify({ preferences: updatedPrefs }),
+    // }).catch((error) => {
+    //   console.error("Error removing sport:", error);
+    // });
   };
 
   const handleSubmit = (e) => {

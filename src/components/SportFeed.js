@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useUser } from "../UserContext";
+import { auth } from "./firebase";
+import { getUserStrings, saveUserStrings } from "../db";
 import FeedList from "./FeedList";
 import "../SportFeed.css";
 
@@ -13,19 +15,21 @@ const SportFeed = ({ sport }) => {
 
   useEffect(() => {
     if (token) {
-      fetch("/api/user/preferences", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setDetailedPrefs(data?.preferences || []);
-        });
+      const user = auth.currentUser;
+      getUserStrings(user.uid).then(setDetailedPrefs);
+      // fetch("/api/user/preferences", {
+      //   headers: { Authorization: `Bearer ${token}` },
+      // })
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     setDetailedPrefs(data?.preferences || []);
+      //   });
     }
   }, [token]);
 
   useEffect(() => {
     if (sport) {
-      fetch(`/api/news/${sport}?sortBy=${sortBy}`)
+      fetch(`/api/news/everything?q=${sport}&searchIn=title&sortBy=${sortBy}&language=en&apiKey=ee41316f534c44789c4038bb99738d77`)
         .then((res) => res.json())
         .then((data) => {
           setArticles(data.articles || []);
@@ -36,7 +40,7 @@ const SportFeed = ({ sport }) => {
 
   useEffect(() => {
     if (sport) {
-      fetch(`/api/bluesky/${sport}?sort=${sortByBS}`)
+      fetch(`/api/bluesky/app.bsky.feed.searchPosts?q=${sport}&sort=${sortByBS}`)
         .then((res) => res.json())
         .then((data) => {
           setBskyPosts(data.posts || []);

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useUser } from "../UserContext";
+import { auth } from "./firebase";
+import { getUserStrings, saveUserStrings } from "../db";
 import SignInPage from "../SignInPage";
 import LoadingPage from "../LoadingPage";
 import HeaderBar from "../components/HeaderBar";
@@ -15,13 +17,15 @@ const HomePage = () => {
 
   useEffect(() => { // run once to fetch user preferences (every time token changes)
     if (token) {
-      fetch("/api/user/preferences", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-        .then(res => res.json())
-        .then(data => {
-          setDetailedPrefs(data?.preferences || []);
-        });
+      const user = auth.currentUser;
+      getUserStrings(user.uid).then(setDetailedPrefs);
+      // fetch("/api/user/preferences", {
+      //   headers: { Authorization: `Bearer ${token}` },
+      // })
+      //   .then(res => res.json())
+      //   .then(data => {
+      //     setDetailedPrefs(data?.preferences || []);
+      //   });
     }
   }, [token]);
 
