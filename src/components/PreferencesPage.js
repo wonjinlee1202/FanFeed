@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useUser } from "../UserContext";
-import { auth } from "./firebase";
+import { auth } from "../firebase";
 import { getUserStrings, saveUserStrings } from "../db";
 import HeaderBar from "../components/HeaderBar";
 import LoadingPage from "../LoadingPage";
