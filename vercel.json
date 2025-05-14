@@ -6,7 +6,7 @@
       },
       {
         "source": "/api/bluesky/(.*)",
-        "destination": "https://public.api.bsky.app/xrpc/$1"
+        "destination": "https://api.bsky.app/xrpc/$1"
       }
     ]
   }
